@@ -46,7 +46,7 @@ body {
   border-style:solid;
   border-color:var(--color-gray-300);
   border-width:1px;
-  border-radius:5px;
+  border-radius:20px;
   display: inline-block;
   margin-left:10px;
   margin-top:10px;
