@@ -13,15 +13,70 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Não será utilizado modo escuro por enquanto!! */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.navbar-text{
+  color: rgb(93, 109, 225);
+  font-family:'Times New Roman', Times, serif;
+  font-size:27px;
+  transition: 0.25s;
+}
+
+.navbar-text:hover{
+  color:rgb(47, 62, 188);
+}
+
+.livroCat{
+  padding:10px;
+  height:300px;
+  width:250px;
+  border-style:solid;
+  border-color:var(--color-gray-300);
+  border-width:1px;
+  border-radius:5px;
+  display: inline-block;
+  margin-left:10px;
+  margin-top:10px;
+  margin-left:10px;
+  margin-bottom:10px;
+  transition: 0.25s;
+}
+
+.livroCat:hover{
+  background:rgba(0, 0, 0, 0.15);
+  cursor:pointer;
+}
+
+dl {
+  display: block;
+}
+
+dt, dd {
+  display: inline-block;
+}
+
+dt {
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  text-align:center;
+  font-size:40px;
+  font-weight:bold;
+  color:rgb(47, 62, 188);
+  margin-block: 20px;
 }
