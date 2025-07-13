@@ -21,11 +21,39 @@
   }
 } */
 
+/*AVISO - os dois blocos abaixo foram feitos pelo GPT*/
+/* Remove as setas do input[type=number] no Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove as setas no Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  overflow-x: hidden;
+}
+
+input, select {
+  border-color:gray;
+  border-style:solid;
+  border-width:1px;
+  border-radius: 7px;
+  height:40px;
+  padding:5px;
+  margin:10px;
+}
+
+input::placeholder{
+  color:gainsboro(93, 109, 225);
 }
 
 .navbar-text{
@@ -37,6 +65,7 @@ body {
 
 .navbar-text:hover{
   color:rgb(47, 62, 188);
+  text-decoration:underline;
 }
 
 .livroCat{
@@ -64,6 +93,10 @@ dl {
   display: block;
 }
 
+dd{
+  overflow-wrap:anywhere;
+}
+
 dt, dd {
   display: inline-block;
 }
@@ -72,11 +105,22 @@ dt {
   font-weight: bold;
 }
 
+dd.detalhe{
+  font-size:30px;
+  font-weight:bold;
+}
+
+dt.detalhe{
+  font-size:35px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(93, 109, 225);
+}
+
 h1 {
   font-family: 'Times New Roman', Times, serif;
   text-align:center;
   font-size:40px;
   font-weight:bold;
-  color:rgb(47, 62, 188);
+  color:rgb(70, 83, 193);
   margin-block: 20px;
 }

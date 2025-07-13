@@ -3,7 +3,7 @@ import Logo from "@/app/components/Logo";
 export default function Navbar(){
 
     return(
-        <div className="h-25 border space-x-20 border-gray-300 flex items-center justify-center">
+        <div className="h-25 border space-x-20 border-gray-300 flex items-center justify-center shadow-lg">
             {/* Logo do site */}
             <div className="w-[250px]">
                 <Link href="/">

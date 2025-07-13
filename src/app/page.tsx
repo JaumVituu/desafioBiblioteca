@@ -1,29 +1,12 @@
-import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
-import Livro from "@/app/components/catalogo/Livro";
+import Catalogo from "@/app/components/catalogo/Catalogo";
 
-export default function HomePage() {
+export default function HomePage({searchParams,}:{searchParams: { [key: string]: string | string[] | undefined };}){
   return (
     <div className="w-screen h-screen">
       <Navbar></Navbar>
       <h1>Catálogo</h1>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-      <Livro titulo="Teste" autor="teste" genero="teste" ano={1010}></Livro>
-
+      <Catalogo searchParams={searchParams}></Catalogo>
     </div>
   );
 }

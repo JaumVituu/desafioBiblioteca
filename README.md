@@ -38,4 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## CHATGPT UTILIZADO em:
 - Duvidas de sintaxe
-- App Router
+- aplicação de Hook Form + Zod
+- aplicação de UseState
+- Página personalizada por ID (App router)
+- aplicação de API Routes
