@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import pool from "@/lib/db";
-/*Feito por IA*/
+/*Feito parcialmente por IA*/
 export async function GET(req: NextRequest) {
 	const {searchParams} = new URL(req.url);
+	console.log(req.url);
 	const genero = searchParams.get("genero");
-	const ano = searchParams.get("ano");
+	const busca = searchParams.get("busca");
+	const anoDeRaw = searchParams.get("anoDe");
+	const anoAteRaw = searchParams.get("anoAte");
+	const anoDe = (anoDeRaw)? parseInt(anoDeRaw,10) : null;
+	const anoAte = (anoAteRaw)? parseInt(anoAteRaw,10) : null;
 	let query = "SELECT id, titulo, autor, ano, genero FROM livro_tb";
 	const conditions = [];
 	const values = [];
@@ -13,16 +18,29 @@ export async function GET(req: NextRequest) {
 		conditions.push(`genero = $${values.length + 1}`);
 		values.push(genero);
 	}
-	if(ano){
-		conditions.push(`ano = $${values.length + 1}`);
-		values.push(ano);
+	if(anoDe){
+		conditions.push(`ano >= $${values.length + 1}`);
+		values.push(anoDe);
 	}
+	if(anoAte){
+		conditions.push(`ano <= $${values.length + 1}`);
+		values.push(anoAte);
+	}
+
+	// ILIKE = LIKE case insensitive
+	if(busca){
+		conditions.push(`(titulo ILIKE $${values.length+1} OR autor ILIKE $${values.length+2})`);
+		values.push(`%${busca}%`);
+		values.push(`%${busca}%`);
+	}
+
 	if (conditions.length) {
       	query += " WHERE " + conditions.join(" AND ");
     }
 
 	try {
 		console.log(query);
+		console.log("busca:" + busca);
 		const result = await pool.query(query,values);
 		return NextResponse.json(result.rows);
 	}catch (error) {

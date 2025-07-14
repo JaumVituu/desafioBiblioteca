@@ -15,10 +15,11 @@ export default function DropList({title, ...registerParams} : DropListParams){
                                                 // console.log(e.target.value);
                                                 // ^ Teste para mudanca de valores.
         }>
-            <option value="N/A" className="text-gray-400" disabled={!defaultLigado} >Gênero do livro</option>
+            <option value="" className="text-gray-400" disabled={!defaultLigado} >Gênero do livro</option>
             {generos.map((gen) => (
                 <option key={gen} value={gen}>{gen}</option> 
             ))}
+            <option key="nenhum" value="">Não selecionar</option>
         </select>
     );
 }

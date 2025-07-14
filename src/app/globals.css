@@ -30,8 +30,12 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /* Remove as setas no Firefox */
-input[type=number] {
+input[type=number]{
   -moz-appearance: textfield;
+}
+
+input[type=submit]:hover, input[type=button]:hover{
+  cursor:pointer;
 }
 
 body {
@@ -76,7 +80,7 @@ input::placeholder{
   border-color:var(--color-gray-300);
   border-width:1px;
   border-radius:20px;
-  display: inline-block;
+  display: relative;
   margin-left:10px;
   margin-top:10px;
   margin-left:10px;
@@ -89,10 +93,18 @@ input::placeholder{
   cursor:pointer;
 }
 
-dl {
-  display: block;
+.livroCat:hover .verDetalhes{
+  opacity:1;
 }
 
+.verDetalhes{
+  position:absolute;
+  bottom:5px;
+  right:15px;
+  opacity:0;
+  transition: 0.25s;
+  cursor: pointer;
+}
 dd{
   overflow-wrap:anywhere;
 }

@@ -19,7 +19,6 @@ export default function Navbar(){
                     <li className="navbar-text">Cadastro</li>
                 </Link>
             </ul>
-            {/* Barra de busca (incerto, dependendo das condições implemento) */}
         </div>
     );
 }

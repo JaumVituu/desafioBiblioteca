@@ -1,5 +1,5 @@
 "use client";
-import DropList from "@/app/cadastro/components/DropList";
+import DropList from "@/app/components/DropList";
 import { useForm } from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -20,10 +20,19 @@ export default function FormularioLivro(){
         resolver: zodResolver(schema),
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [valor, setValor] = useState("");
     const router = useRouter();
+
+    //handleChange gerado por IA
+    const handleChange =(e: React.ChangeEvent<HTMLInputElement>) => {
+        const input = e.target.value;
+        const apenasNumeros = input.replace(/\D/g, "");
+        if (apenasNumeros.length <= 4)setValor(apenasNumeros)
+    }
 
     const cadastrarLivro = async (data: FormData) => {
         if (isSubmitting) return;
+        if (data.genero == "") data.genero = "N/A"; 
         setIsSubmitting(true);
         const res = await fetch('api/livro',{
             method : 'POST',
@@ -45,7 +54,7 @@ export default function FormularioLivro(){
                     {errors.titulo && <p className="text-red-500 text-sm">{errors.titulo.message}</p>}
                 </div>
                 <div className="h-20">
-                    <input {...register("ano")} type="number" title="Ano" placeholder="Ano" onKeyDown={(e) => {if (e.key === 'e' || e.key === 'E' || e.key === '+' || e.key === '-'){e.preventDefault()}}}/>
+                    <input {...register("ano")} value={valor} type="text" inputMode="numeric" title="Ano" placeholder="Ano" onChange={handleChange}/>
                     {/* código em onKeyDown impede que digitos além de numeros sejam inseridos*/}
 
                     {errors.ano && <p className="text-red-500 text-sm">{errors.ano.message}</p>}

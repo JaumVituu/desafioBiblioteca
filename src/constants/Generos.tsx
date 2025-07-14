@@ -4,6 +4,7 @@ export const generos =
 "Conto",
 "Drama",
 "Ficção Científica",
+"Fantasia",
 "Horror",
 "Mitologia",
 "Poema",
