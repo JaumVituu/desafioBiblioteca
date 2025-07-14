@@ -4,7 +4,7 @@
 
 A aplicação consiste em um exemplo simples de visualização e cadastro de livros.
 
-💻 Codificação em **Typescript e React**
+💻 Codificação em **Typescript e React**, com estilização em **Tailwind CSS**
 
 🖥 Tratamento de requisições com **API Routes**, direto do próprio Next.js
 
