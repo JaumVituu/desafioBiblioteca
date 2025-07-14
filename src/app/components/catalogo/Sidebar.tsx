@@ -57,12 +57,12 @@ export default function Sidebar(){
                     {errors.anoAte && <p className="text-red-500 text-sm">{errors.anoAte.message}</p>}
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                    <input {...register("busca")} className="w-50" type="text" placeholder="Nome/Autor"/>
-                    <input type="submit" value="Buscar"/>
+                    <input {...register("busca")} className="w-50" type="text" placeholder="Titulo/Autor"/>
+                    <input type="submit" value="Aplicar filtros"/>
                 </div>
                 <div className="my-10 flex justify-center items-center">
                     {/* Botão de limpar banco */}
-                    <input onClick={deletar} value="Deletar livros" type="button"/>
+                    <input onClick={deletar} className="overflow-auto" value="Deletar todos os livros" type="button"/>
                 </div>
             </form>
         </div>
