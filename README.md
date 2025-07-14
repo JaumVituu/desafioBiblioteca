@@ -28,9 +28,9 @@ Na aplicação entitulada de **"Biblioteca Agora"**, você pode:
 
 Você pode executar a aplicação:
 
-### Pelo link do deploy que fiz na [Vercel](colocar Link aqui)
+### Pelo link do deploy que fiz na [Vercel](https://desafio-biblioteca-kappa.vercel.app/)
 
-            ou
+ou
 
 ### Por editor de código
 

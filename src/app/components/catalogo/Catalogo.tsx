@@ -3,7 +3,7 @@ import Livro from "@/types/Livro";
 
 export async function getLivros(query:string) : Promise<Livro[]>{
     console.log(query);
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     const res = await fetch(`${baseUrl}/api/livro?${query}`, {method: 'GET', cache: 'no-store' });
     const data = await res.json();
     //console.log(data);

@@ -62,7 +62,7 @@ export default function Sidebar(){
                 </div>
                 <div className="my-10 flex justify-center items-center">
                     {/* Botão de limpar banco */}
-                    <input onClick={deletar} value="Limpar registros" type="button"/>
+                    <input onClick={deletar} value="Deletar livros" type="button"/>
                 </div>
             </form>
         </div>

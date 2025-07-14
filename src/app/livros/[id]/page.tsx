@@ -8,7 +8,7 @@ type Params = Promise<{id : string}>;
 
 
 async function getLivroById({id} : {id : string}) : Promise <Livro>{
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     console.log(baseUrl);
     const res = await fetch(`${baseUrl}/api/livro/${id}`, {method: 'GET', cache: 'force-cache'});
     if(res.status == 404){
