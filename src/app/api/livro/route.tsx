@@ -15,8 +15,13 @@ export async function GET(req: NextRequest) {
 	const values = [];
 	//Filtros de busca
 	if(genero){
-		conditions.push(`genero = $${values.length + 1}`);
-		values.push(genero);
+		if(genero == "indefinido"){
+			conditions.push('genero IS NULL');
+		}
+		else{
+			conditions.push(`genero = $${values.length + 1}`);
+			values.push(genero);
+		}
 	}
 	if(anoDe){
 		conditions.push(`ano >= $${values.length + 1}`);
@@ -40,6 +45,7 @@ export async function GET(req: NextRequest) {
 
 	try {
 		console.log(query);
+		console.log(genero)
 		console.log("busca:" + busca);
 		const result = await pool.query(query,values);
 		return NextResponse.json(result.rows);
@@ -48,18 +54,24 @@ export async function GET(req: NextRequest) {
 		return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
 	}
 }
-/*Feito por IA*/
+
 export async function POST(req: NextRequest) {
 	try {
 		const body = await req.json();
 		const {titulo,autor,ano,genero} = body;
-
+		if(genero){
+			const result = await pool.query(
+			"INSERT INTO livro_tb (titulo, autor, ano, genero) VALUES ($1, $2, $3, $4) RETURNING *",
+			[titulo,autor,ano,genero]
+			);
+			return NextResponse.json(result.rows[0]);
+		}
 		const result = await pool.query(
-		"INSERT INTO livro_tb (titulo, autor, ano, genero) VALUES ($1, $2, $3, $4) RETURNING *",
-		[titulo,autor,ano,genero]
+		"INSERT INTO livro_tb (titulo, autor, ano) VALUES ($1, $2, $3) RETURNING *",
+		[titulo,autor,ano]
 		);
-
 		return NextResponse.json(result.rows[0]);
+		
 	} catch (error) {
 		console.error("Erro no POST /api/livro:", error);
 		return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });

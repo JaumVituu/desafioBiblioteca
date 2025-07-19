@@ -10,7 +10,7 @@ const schema = z.object({
   titulo: z.string().min(1, "Titulo é obrigatório"),
   autor: z.string().min(1, "Autor é obrigatório"),
   ano:  z.string().min(1, "Ano é obrigatório"),
-  genero: z.string()
+  genero: z.string().optional()
 });
 
 type FormData = z.infer<typeof schema>;
@@ -32,7 +32,7 @@ export default function FormularioLivro(){
 
     const cadastrarLivro = async (data: FormData) => {
         if (isSubmitting) return;
-        if (data.genero == "") data.genero = "N/A"; 
+        if (data.genero == "") data.genero = undefined; 
         setIsSubmitting(true);
         const res = await fetch('api/livro',{
             method : 'POST',

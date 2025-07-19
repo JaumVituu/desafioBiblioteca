@@ -27,7 +27,7 @@ export async function POST(){
 		('Os Lusíadas', 'Luís Vaz de Camões', 1572, 'Poema'),
 		('Orgulho e Preconceito', 'Jane Austen', 1813, 'Romance'),
 		('Garota Exemplar', 'Gillian Flynn', 2012, 'Suspense'),
-		('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 1943, 'N/A');`;
+		('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 1943, null);`;
 		const res = await pool.query(query);
 		return NextResponse.json(res);
 	}

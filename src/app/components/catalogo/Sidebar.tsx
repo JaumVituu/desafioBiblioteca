@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useRouter} from "next/navigation";
+import { generos } from "@/constants/Generos";
 
 const schema = z.object({
     anoDe:z.string().optional(),
@@ -28,6 +29,8 @@ export default function Sidebar(){
     });
 
     const filtrar = async (data: FormData) => {
+        // se for "não especificado"
+        if(data.genero == generos[generos.length - 1]) data.genero = "indefinido";
         router.push(`/?genero=${data.genero}&anoDe=${data.anoDe}&anoAte=${data.anoAte}&busca=${data.busca}`);
     };
 

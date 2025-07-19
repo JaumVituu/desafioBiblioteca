@@ -2,6 +2,7 @@ import BotaoVoltar from "@/app/components/BotaoVoltar";
 import Livro from "@/types/Livro";
 
 export default async function Detalhes({livro} : {livro : Livro}){
+    if(!livro.genero) livro.genero = "Não especificado";
     return(
         <div className="text-center mx-auto my-20 w-200 h-fit p-10 border-gray-300 border-1 shadow-xl rounded-4xl">
             <BotaoVoltar url="/"></BotaoVoltar>

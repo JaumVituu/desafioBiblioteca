@@ -9,6 +9,7 @@ export default function LivroCat({livro} : {livro : Livro}){
     const limiteAutor = 18;
     const titulo = (livro.titulo.length > limiteTitulo)?livro.titulo.slice(0,limiteTitulo) + "...":livro.titulo;
     const autor = (livro.autor.length > limiteAutor)?livro.autor.slice(0,limiteAutor) + "...":livro.autor;
+    if(!livro.genero)livro.genero="Não especificado"
     return(
         <Link href={url}>
             <div className="livroCat relative" title={dica}>

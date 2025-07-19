@@ -10,4 +10,4 @@ export const generos =
 "Poema",
 "Romance",
 "Suspense",
-"N/A"]
+"Não especificado"]
