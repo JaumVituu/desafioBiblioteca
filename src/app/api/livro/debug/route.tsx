@@ -1,6 +1,5 @@
 import pool from "@/lib/db";
 import {NextResponse} from "next/server";
-import Livro from "@/types/Livro";
 
 export async function DELETE() {
 	try {
@@ -15,7 +14,7 @@ export async function DELETE() {
 
 export async function POST(){
 	try{
-		var query = `INSERT INTO livro_tb(titulo,autor,ano,genero) VALUES 
+		const query = `INSERT INTO livro_tb(titulo,autor,ano,genero) VALUES 
 		('O Código Da Vinci', 'Dan Brown', 2003, 'Ação'),
 		('As Aventuras de Huckleberry Finn', 'Mark Twain', 1884, 'Aventura'),
 		('A Casa Tomada', 'Julio Cortázar', 1946, 'Conto'),
