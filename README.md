@@ -2,6 +2,8 @@
 
 **Projeto totalmente desenvolvido em Next.js!**
 
+_Desenvolvido por João Vitor dos Santos_
+
 A aplicação consiste em um exemplo simples de visualização e cadastro de livros.
 
 💻 Codificação em **Typescript e React**, com estilização em **Tailwind CSS**
@@ -22,29 +24,27 @@ Na aplicação entitulada de **"Biblioteca Agora"**, você pode:
 - **Filtrar** os resultados por parâmetros;
 - **Buscar** livros e/ou autores;
 
-> Obs.: Também coloquei uma funçãozinha de deletar os livros cadastrados pra não sobrecarregar o banco
-
+> Obs.: Também foram inseridas funções para deletar os livros e inserção de livro de exemplo para efetuar teste de funcionalidades.
 ## Execução
 
 Você pode executar a aplicação:
 
-### ~~Pelo link do deploy que fiz na Vercel~~ 
-> Vou omitir o link do deploy no momento, depois disponibilizo aqui.
+### Pelo link do [deploy que fiz na Vercel](https://desafio-biblioteca-repertorio.vercel.app/)
 
 ou
 
 ### Por editor de código
 
-Pra isso, você vai precisar criar um arquivinho na pasta principal chamado .env.local, pra armazenar as variáveis de ambiente (porque o Git reclamaria se eu colocasse elas aqui)
+Pra isso, você vai precisar criar um arquivo na pasta principal chamado .env.local, pra armazenar as variáveis de ambiente.
 
 Dentro do .env.local, você cola esse trecho:
 
 ```.env.local
-DATABASE_URL = postgresql://postgres:uBVkYcJqqU2zupEK@db.iupmkxhjcbsgzesckaer.supabase.co:5432/postgres
+DATABASE_URL = postgresql://postgres.venyimqbengnaewivaic:nOEiHZKxiHT9onsj@aws-0-sa-east-1.pooler.supabase.com:6543/postgres
 NEXT_PUBLIC_BASE_URL = http://localhost:3000
 ```
 
-Depois, é só rodar
+Depois, execute:
 
 ```bash
 npm run dev
@@ -56,9 +56,9 @@ pnpm dev
 bun dev
 ```
 
-(Ou então você roda **npm run build** mesmo, demora mais pra carregar mas executa bem mais rápido)
+(Caso prefira, execute **npm run build**, demora pra compilar mas a execução é mais rápida)
 
-E pra executar, acessa [http://localhost:3000](http://localhost:3000).
+E pra executar, acesse [http://localhost:3000](http://localhost:3000).
 
 ## CHATGPT UTILIZADO em:
 - Duvidas de sintaxe
@@ -66,3 +66,11 @@ E pra executar, acessa [http://localhost:3000](http://localhost:3000).
 - aplicação de Hook Form + Zod
 - aplicação de useState
 - aplicação de API Routes
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/jo%C3%A3o-vitor-dos-santos-ads/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="40" height="40"/>
+  </a>
+  <br/>
+  <strong>Fique à vontade para conferir meu Linkedin</strong>
+</p>
