@@ -4,7 +4,7 @@
 
 A aplicação consiste em um exemplo simples de visualização e cadastro de livros.
 
-💻 Codificação em **Typescript e React**
+💻 Codificação em **Typescript e React**, com estilização em **Tailwind CSS**
 
 🖥 Tratamento de requisições com **API Routes**, direto do próprio Next.js
 
@@ -28,7 +28,8 @@ Na aplicação entitulada de **"Biblioteca Agora"**, você pode:
 
 Você pode executar a aplicação:
 
-### [Pelo link do deploy que fiz na Vercel](https://desafio-biblioteca-kappa.vercel.app/)
+### ~~Pelo link do deploy que fiz na Vercel~~ 
+> Vou omitir o link do deploy no momento, depois disponibilizo aqui.
 
 ou
 
