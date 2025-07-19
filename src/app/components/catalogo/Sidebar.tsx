@@ -38,6 +38,14 @@ export default function Sidebar(){
         })
         router.push("/");
     };
+
+    const inserirTeste = async () =>{
+        await fetch('api/livro/debug', {
+            method: 'POST',
+            cache : 'no-store'
+        })
+        router.push("/");
+    }
     const router = useRouter();
     return(
         <div style={{boxShadow:'5px 0 5px -5px rgba(0,0,0,0.3)'}} className="w-80 mr-5 border-r-1 border-r-gray-300 shadow-xl shadow-r items-center">
@@ -60,9 +68,13 @@ export default function Sidebar(){
                     <input {...register("busca")} className="w-50" type="text" placeholder="Titulo/Autor"/>
                     <input type="submit" value="Aplicar filtros"/>
                 </div>
-                <div className="my-10 flex justify-center items-center">
+                <div className="my-5 flex justify-center items-center">
                     {/* Botão de limpar banco */}
                     <input onClick={deletar} className="overflow-auto" value="Deletar todos os livros" type="button"/>
+                </div>
+                <div className="flex justify-center items-center">
+                    {/* Botão de inserir livros teste */}
+                    <input onClick={inserirTeste} className="overflow-auto" value="Inserir Livros Teste" type="button"/>
                 </div>
             </form>
         </div>
